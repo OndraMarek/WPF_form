@@ -57,6 +57,8 @@ namespace BookWpf
             textBoxAuthor.Clear();
             textBoxPublisher.Clear();
             textBoxPages.Clear();
+
+            return;
         }
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -95,6 +97,8 @@ namespace BookWpf
                     };
                     books.Add(newBook);
                 }
+
+                return;
             }
         }
         private void buttonExport_Click(object sender, RoutedEventArgs e)
@@ -120,6 +124,7 @@ namespace BookWpf
                         }
                     }
                 }
+                return;
             }
         }
 
@@ -128,6 +133,7 @@ namespace BookWpf
             if (!char.IsDigit(e.Text[0]))
             {
                 e.Handled = true;
+                return;
             }
         } 
     }

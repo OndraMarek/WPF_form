@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Knihy" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="textBoxId" HorizontalAlignment="Left" Height="23" Margin="627,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="627,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -13,8 +13,8 @@
         <TextBox x:Name="textBoxPublisher" HorizontalAlignment="Left" Height="23" Margin="627,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxPages" HorizontalAlignment="Left" Height="23" Margin="627,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBoxPages_PreviewTextInput"/>
         <Button x:Name="buttonAdd" Content="Přidat záznam" HorizontalAlignment="Left" Margin="642,281,0,0" VerticalAlignment="Top" Width="87" Click="ButtonAdd_Click"/>
-        <Button x:Name="buttonImport" Content="Importovat" HorizontalAlignment="Left" Margin="642,356,0,0" VerticalAlignment="Top" Width="87" Click="ButtonImport_Click"/>
-        <Button x:Name="buttonExport" Content="Exportovat" HorizontalAlignment="Left" Margin="642,331,0,0" VerticalAlignment="Top" Width="87" Click="buttonExport_Click"/>
+        <Button x:Name="buttonImport" Content="Importovat" HorizontalAlignment="Left" Margin="642,331,0,0" VerticalAlignment="Top" Width="87" Click="ButtonImport_Click"/>
+        <Button x:Name="buttonExport" Content="Exportovat" HorizontalAlignment="Left" Margin="642,356,0,0" VerticalAlignment="Top" Width="87" Click="buttonExport_Click"/>
         <DataGrid x:Name="dataGridBooks" ItemsSource="{Binding Source=books}" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="553" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
