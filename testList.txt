@@ -1,0 +1,5 @@
+80-205-0001-4;Duna;Frank Herbert;Svoboda;588
+28-015-67;Na západní frontě klid;Erich Maria Remarque;Naše vojsko;174
+80-00-00788-6;Harry Potter a Kámen mudrců;J. K. Rowling;Albatros (ČR);288
+978-8-08543-425-5;Poklad ve Stříbrném jezeře;Karel May;Olympia;398
+80-86216-46-2;R.U.R.;Karel Čapek;Artur;102
