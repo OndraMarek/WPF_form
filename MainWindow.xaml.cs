@@ -127,6 +127,7 @@ namespace BookWpf
 
             FilterWindow filterWindow = new FilterWindow(books, dataGridBooks);
             filterWindow.Owner = this;
+            filterWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             filterWindow.ShowDialog();
         }
 

@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookWpf"
         mc:Ignorable="d"
-        Title="FilterWindow" Height="156.148" Width="225.82">
-    <Grid>
+        Title="Filtrování" Height="128.148" Width="304.32">
+    <Grid Margin="0,0,0,27">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <Label Content="Autor:" HorizontalAlignment="Left" Margin="10,10,0,10"/>
-        <TextBox x:Name="textBoxFilterAuthor" HorizontalAlignment="Stretch" Margin="86,10,23,10" />
-        <Button x:Name="buttonFilterAuthor" Grid.Row="2" Content="Filtorvat" HorizontalAlignment="Center" Margin="56,10,58,10" Click="buttonOk_Click" Width="104" />
+        <TextBox x:Name="textBoxFilter" HorizontalAlignment="Stretch" Margin="135,13,23,0" Grid.ColumnSpan="2" />
+        <Button x:Name="buttonFilterAuthor" Grid.Row="2" Content="Filtorvat" HorizontalAlignment="Center" Margin="84,10,108,10" Click="buttonOk_Click" Width="104" Grid.ColumnSpan="2" />
+        <ComboBox x:Name="ComboBoxFilter" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Autor</ComboBoxItem>
+            <ComboBoxItem>Vydavatel</ComboBoxItem>
+            <ComboBoxItem>Název</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
