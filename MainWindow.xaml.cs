@@ -1,24 +1,17 @@
 ﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.ComponentModel;
 using System.IO;
+using System.Collections.Generic;
 
 
 namespace BookWpf
 {
     public partial class MainWindow : Window
     {
-        public class Book
-        {
-            public string Id { get; set; }
-            public string Name { get; set; }
-            public string Author { get; set; }
-            public string Publisher { get; set; }
-            public int Pages { get; set; }
-        }
+        
+        private BindingList<BookModel> books = new BindingList<BookModel>();
 
-        private BindingList<Book> books = new BindingList<Book>();
         public MainWindow()
         {
             InitializeComponent();
@@ -42,7 +35,7 @@ namespace BookWpf
                 MessageBox.Show("Kniha s tímto ID již existuje", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            Book newBook = new Book()
+            BookModel newBook = new BookModel()
             {
                 Id = textBoxId.Text,
                 Name = textBoxName.Text,
@@ -62,7 +55,7 @@ namespace BookWpf
         }
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
-            Book selectedBook = (Book)dataGridBooks.SelectedItem;
+            BookModel selectedBook = (BookModel)dataGridBooks.SelectedItem;
 
             if (selectedBook != null)
             {
@@ -87,7 +80,7 @@ namespace BookWpf
                 {
                     string[] fields = line.Split(';');
 
-                    Book newBook = new Book()
+                    BookModel newBook = new BookModel()
                     {
                         Id = fields[0],
                         Name = fields[1],
@@ -101,6 +94,7 @@ namespace BookWpf
                 return;
             }
         }
+
         private void buttonExport_Click(object sender, RoutedEventArgs e)
         {
             var saveFileDialog = new Microsoft.Win32.SaveFileDialog();
@@ -112,7 +106,7 @@ namespace BookWpf
                 {
                     foreach (var row in dataGridBooks.Items)
                     {
-                        var book = row as Book;
+                        var book = row as BookModel;
                         if (book != null)
                         {
                             writer.Write(book.Id + ";");
@@ -126,6 +120,19 @@ namespace BookWpf
                 }
                 return;
             }
+        }
+
+        private void buttonFilter_Click(object sender, RoutedEventArgs e)
+        {
+
+            FilterWindow filterWindow = new FilterWindow(books, dataGridBooks);
+            filterWindow.Owner = this;
+            filterWindow.ShowDialog();
+        }
+
+        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridBooks.ItemsSource = books;
         }
 
         private void TextBoxPages_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)

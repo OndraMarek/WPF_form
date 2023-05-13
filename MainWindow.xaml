@@ -30,6 +30,8 @@
         <Label Content="Vydavatel" HorizontalAlignment="Left" Margin="627,155,0,0" VerticalAlignment="Top"/>
         <Label Content="Počet stran" HorizontalAlignment="Left" Margin="627,204,0,0" VerticalAlignment="Top"/>
         <Button x:Name="buttonDelete" Content="Smazat záznam" HorizontalAlignment="Left" Margin="642,306,0,0" VerticalAlignment="Top" Width="87" Click="buttonDelete_Click"/>
+        <Button x:Name="buttonFilter" Content="Filtorvat" HorizontalAlignment="Left" Margin="583,381,0,0" VerticalAlignment="Top" Width="87" Click="buttonFilter_Click"/>
+        <Button x:Name="buttonReset" Content="Resetovat" HorizontalAlignment="Left" Margin="695,381,0,0" VerticalAlignment="Top" Width="87" Height="20" Click="buttonReset_Click"/>
 
     </Grid>
 </Window>
