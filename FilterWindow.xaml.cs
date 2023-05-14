@@ -25,25 +25,25 @@ namespace BookWpf
 
         private void buttonOk_Click(object sender, RoutedEventArgs e)
         {
-            if (((ComboBoxItem)ComboBoxFilter.SelectedItem).Content.ToString() == "Autor")
-            {
-                string filterAuthor = textBoxFilter.Text;
-                List<BookModel> filteredBooks = books.Where(book => book.Author.Contains(filterAuthor)).ToList();
-                dataGridBooks.ItemsSource = filteredBooks;
-            }
-            if (((ComboBoxItem)ComboBoxFilter.SelectedItem).Content.ToString() == "Vydavatel")
-            {
-                string filterPublisher = textBoxFilter.Text;
-                List<BookModel> filteredBooks = books.Where(book => book.Publisher.Contains(filterPublisher)).ToList();
-                dataGridBooks.ItemsSource = filteredBooks;
-            }
-            if (((ComboBoxItem)ComboBoxFilter.SelectedItem).Content.ToString() == "Název")
-            {
-                string filterName = textBoxFilter.Text;
-                List<BookModel> filteredBooks = books.Where(book => book.Name.Contains(filterName)).ToList();
-                dataGridBooks.ItemsSource = filteredBooks;
+            List<BookModel> filteredBooks;
+            string selectedFilter = ((ComboBoxItem)ComboBoxFilter.SelectedItem).Content.ToString();
+            string textFilter = textBoxFilter.Text;
+
+            switch (selectedFilter) {
+                case: "Autor":
+                    filteredBooks = books.Where(book => book.Author.Contains(textFilter)).ToList();
+                    break;
+                case: "Vydavatel":
+                    filteredBooks = books.Where(book => book.Publisher.Contains(textFilter)).ToList();
+                    break;
+                case: "Název":
+                    filteredBooks = books.Where(book => book.Name.Contains(textFilter)).ToList();
+                    break;
+                default:
+                    filteredBooks = books.ToList();
             }
 
+            dataGridBooks.ItemsSource = filteredBooks;
             this.Close();
         }
     }
