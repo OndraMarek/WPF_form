@@ -8,7 +8,6 @@ using System;
 
 namespace BookWpf
 {
-
     public partial class FilterWindow : Window
     {
 
@@ -30,17 +29,18 @@ namespace BookWpf
             string textFilter = textBoxFilter.Text;
 
             switch (selectedFilter) {
-                case: "Autor":
+                case "Autor":
                     filteredBooks = books.Where(book => book.Author.Contains(textFilter)).ToList();
                     break;
-                case: "Vydavatel":
+                case "Vydavatel":
                     filteredBooks = books.Where(book => book.Publisher.Contains(textFilter)).ToList();
                     break;
-                case: "Název":
+                case "Název":
                     filteredBooks = books.Where(book => book.Name.Contains(textFilter)).ToList();
                     break;
                 default:
                     filteredBooks = books.ToList();
+                    break;
             }
 
             dataGridBooks.ItemsSource = filteredBooks;
