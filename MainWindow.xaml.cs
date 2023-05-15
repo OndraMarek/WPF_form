@@ -2,14 +2,11 @@
 using System.Windows;
 using System.ComponentModel;
 using System.IO;
-using System.Collections.Generic;
-
 
 namespace BookWpf
 {
     public partial class MainWindow : Window
     {
-        
         private BindingList<BookModel> books = new BindingList<BookModel>();
 
         public MainWindow()
@@ -66,6 +63,7 @@ namespace BookWpf
                 return;
             }
             MessageBox.Show("Vyberte záznam, který chcete smazat", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
             return;
         }
 
@@ -118,6 +116,7 @@ namespace BookWpf
                         }
                     }
                 }
+
                 return;
             }
         }
@@ -141,6 +140,7 @@ namespace BookWpf
             if (!char.IsDigit(e.Text[0]))
             {
                 e.Handled = true;
+
                 return;
             }
         } 
